@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shopping-project"
+    }
+  },
+  "defaultProject": "shopping-project",
+  "cli": {
+    "analytics": "3ac08db3-052a-42f7-87c6-e5957898a3f0"
+  }
 }
