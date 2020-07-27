@@ -7,7 +7,7 @@ import { Recipe } from '../../recipe.module';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe= new EventEmitter<Recipe>();
+  @Input() recipe:Recipe;
   @Output() recipeDetail = new EventEmitter<any>();
 
   constructor() { }
