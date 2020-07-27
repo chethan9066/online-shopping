@@ -1,14 +1,18 @@
 <div class="row">
     <div class="col-md-5">
-        <app-recipe-list>Recipe List Loading...</app-recipe-list>
+        <app-recipe-list (selectedRecipe)="selectedRecipeIs=$event">
+         Recipe List Loading...
+        </app-recipe-list>
     </div>
     <div class="col-md-5">
         <app-recipe-detail 
-        (recipeDetails)="displayRecipeDeatils($event)"
-        *ngIf="selectedRecipe"
-        >Recipe Details Loding...
-            <ng-template #infoText>Please Select Recipe !</ng-template>
-        </app-recipe-detail>
+        *ngIf="selectedRecipeIs; else infoText"
+        [recipe]="selectedRecipeIs">
+        Recipe Details Loding...
+    </app-recipe-detail>
+            <ng-template #infoText>
+                <p> <b> Select A Recipe!! </b> </p>
+            </ng-template>
     </div>
 
 </div>
