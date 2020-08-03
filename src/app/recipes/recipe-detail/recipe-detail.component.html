@@ -1,7 +1,7 @@
  <div class="row">
     <div class="row">
         <div class="col-xs-10">
-            <img [src]="recipe.imagePath" class="img-responsive" alt="Image Not Found" style="max-width: 250px;max-height: 150px;">
+            <img [src]="recipe.imagePath" class="img-responsive" alt="Image Not Found" style="max-width: 350px;max-height: 250px;">
         </div>
     </div>
 
@@ -32,10 +32,17 @@
             {{recipe.description}}
         </div>
     </div>
-
+<br>
     <div class="row">
         <div class="col-xs-10">
-            Ingrediants
+            <p><b>Ingredients</b></p>
+            <ul class="list-group">
+                <li 
+                class="list-group-item"
+                *ngFor="let ingredient of recipe.ingredients">
+                {{ingredient.name}} - {{ingredient.amount}} Rs
+            </li>
+            </ul>
         </div>
     </div>
 </div>
