@@ -23,4 +23,10 @@ export class ShoppingListService {
     this.ingredients.push(ing);
     this.ingredientAdded.emit(this.ingredients.slice());
   }
+
+  addIngredientsFrmSL(ing:Ingredients[]){ //from Recipe to shopping List 
+      
+      this.ingredients.push(...ing); //... it's and spread operator convert into list and push to array
+      this.ingredientAdded.emit(this.ingredients.slice());
+  }
 }
