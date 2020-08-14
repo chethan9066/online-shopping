@@ -33,7 +33,7 @@ export class RecipesService {
       new Recipe(
         'Chicken Cacciatore ',
         'We chose this recipe as our inaugural Winner Winner Chicken Dinner feature,to get fall off to a cozy start',
-        'https://images.food52.com/QBMv_HwDcc4nQ7PB5ydRhGUrPS8=/2016x1344/729016a7-afcd-49cb-a499-be9f31d6d3c0--Chicken-Cacciatore_0735_food52_mark_weinberg.jpg',
+        'https://i.pinimg.com/originals/bd/23/30/bd2330396251684932441cdad4c3c365.jpg',
         [
           new Ingredients('skin-on chicken thighs',200 ),
           new Ingredients('bacon',350 ),
@@ -54,5 +54,5 @@ export class RecipesService {
   getRecipe(index:number){
     return this.recipe[index];
   }
-  
+
 }
