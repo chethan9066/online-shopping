@@ -6,6 +6,9 @@ import { Directive, HostListener, HostBinding, ElementRef } from '@angular/core'
 
 
 export class DropDownDirective {
+
+    constructor(private elRef:ElementRef) { }
+
     @HostBinding('class.open') isOpen=false;
 
     @HostListener('document:click',['$event']) setDropDownToggle(event:Event){
@@ -13,5 +16,4 @@ export class DropDownDirective {
         this.isOpen=this.elRef.nativeElement.contains(event.target) ? !this.isOpen : false;
     }
 
-    constructor(private elRef:ElementRef) { }
 }

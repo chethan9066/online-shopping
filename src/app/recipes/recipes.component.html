@@ -1,18 +1,20 @@
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <app-recipe-list >
          Recipe List Loading...
         </app-recipe-list>
     </div>
     <div class="col-md-5">
-        <app-recipe-detail 
+        <!-- <app-recipe-detail 
         *ngIf="selectedRecipeIs; else infoText"
         [recipe]="selectedRecipeIs">
         Recipe Details Loding...
     </app-recipe-detail>
             <ng-template #infoText>
                 <p> <b> Select A Recipe!! </b> </p>
-            </ng-template>
+            </ng-template> -->
+
+        <router-outlet></router-outlet>
     </div>
 
 </div>

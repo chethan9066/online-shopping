@@ -11,7 +11,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { DropDownDirective } from './shared/dropdown.directive'
+import { DropDownDirective } from './shared/dropdown.directive';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DropDownDirective } from './shared/dropdown.directive'
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    DropDownDirective 
+    DropDownDirective,
+    ErrorPageComponent 
   ],
   imports: [
     BrowserModule,

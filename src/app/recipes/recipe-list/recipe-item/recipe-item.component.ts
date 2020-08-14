@@ -19,6 +19,7 @@ export class RecipeItemComponent implements OnInit {
 
   fireRecipeDetails(){
     this.recipesService.selectedRecipe.emit(this.recipe);
+    console.log(this.recipe);
   }
 
 }
