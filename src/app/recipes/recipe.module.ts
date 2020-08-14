@@ -2,7 +2,7 @@ import { Ingredients } from '../shared/ingredient.module';
 
 export class Recipe{
 
-    constructor(public id: number,
+    constructor(
                 public name:string,
                 public description:string,
                 public imagePath:string,

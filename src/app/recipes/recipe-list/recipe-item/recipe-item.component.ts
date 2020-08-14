@@ -17,9 +17,9 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fireRecipeDetails(){
-    this.recipesService.selectedRecipe.emit(this.recipe);
-    console.log(this.recipe);
-  }
+  // fireRecipeDetails(){
+  //   this.recipesService.selectedRecipe.emit(this.recipe);
+  //   // console.log(this.recipe);
+  // }
 
 }
