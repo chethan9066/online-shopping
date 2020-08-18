@@ -10,15 +10,15 @@ import { RecipesService } from './recipes.service';
 export class RecipesComponent implements OnInit {
   selectedRecipeIs:Recipe;
 
-  constructor(private recipesService:RecipesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipesService.selectedRecipe
-    .subscribe(
-      (recipe:Recipe) =>{
-        this.selectedRecipeIs = recipe;
-      }
-    )
+    // this.recipesService.selectedRecipe
+    // .subscribe(
+    //   (recipe:Recipe) =>{
+    //     this.selectedRecipeIs = recipe;
+    //   }
+    // ) After adding routing these is no use
   }
 
 
