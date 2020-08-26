@@ -28,6 +28,10 @@ export class ShoppingListComponent implements OnInit {
     )
   }
 
+  onEdit(i:number){
+    this.shoppingListService.editMode.next(i);
+  }
+
   // onIngredientAdded(ing:Ingredients){
   //   // this.ingredients.push(ing);
 

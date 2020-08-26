@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/internal/Subject';
 
 import { Recipe } from './recipe.module';
 import { Ingredients } from '../shared/ingredient.module';
@@ -8,7 +9,7 @@ import { Ingredients } from '../shared/ingredient.module';
 })
 
 export class RecipesService {
-  // selectedRecipe = new Subject<Recipe>();
+  recipeChanges = new Subject<Recipe[]>();
 
   private recipe:Recipe[]=[ 
     new Recipe(
@@ -48,12 +49,27 @@ export class RecipesService {
   
   constructor() { }
 
-  getRecipes(){
+  getRecipes(){ 
    return this.recipe.slice(); //sends copy of an array not giving access to original array
   }
 
   getRecipe(index:number){
     return this.recipe[index];
+  }
+
+  addRecipe(newRecipe:Recipe){
+
+    this.recipe.push(newRecipe);
+  }
+
+  updateRecipe(i:number, newRecipe:Recipe){
+    this.recipe[i]= newRecipe;
+  }
+
+  RemoveIngredient(id:number,i:number){
+    console.log(this.recipe[id].ingredients.splice(i,1))
+    this.recipe[id].ingredients.splice(i,0);
+    this.recipeChanges.next(this.recipe);
   }
 
 }
