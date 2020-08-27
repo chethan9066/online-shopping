@@ -28,7 +28,7 @@ export class RecipeEditComponent implements OnInit {
       }
     );
 
-    this.recipesService.recipeChanges.subscribe(
+    this.recipesService.recipeChanged.subscribe(
       (recipe:Recipe[]) =>{
         this.initForm();
       }
@@ -61,7 +61,7 @@ export class RecipeEditComponent implements OnInit {
     }
 
     this.recipeForm = new FormGroup({
-      'recipeName': new FormControl(recipeName, Validators.required),
+      'name': new FormControl(recipeName, Validators.required),
       'imagePath': new FormControl(imagePath,Validators.required),
       'description': new FormControl(description,Validators.required),
       'ingredients': recipeIngredients
@@ -70,13 +70,11 @@ export class RecipeEditComponent implements OnInit {
 
   onSubmit(){
     console.log(this.recipeForm);
-    // console.log(this.recipeForm.get('description').value)
-    // if(this.editMode){
-    //   this.newRecipe.name = this.recipeForm.get('recipeName').value;
-    //   this.newRecipe.imagePath = this.recipeForm.get('imagePath').value;
-    //   this.newRecipe.description = this.recipeForm.get('description').value;
-    //   this.recipesService.updateRecipe(this.id,this.newRecipe);
-    // }
+    if(this.editMode){
+      this.recipesService.updateRecipe(this.id,this.recipeForm.value);
+    }else {
+      this.recipesService.addRecipe(this.recipeForm.value);
+    }
   }
 
   get ingControls(){

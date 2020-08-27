@@ -9,7 +9,7 @@ import { Ingredients } from '../shared/ingredient.module';
 })
 
 export class RecipesService {
-  recipeChanges = new Subject<Recipe[]>();
+  recipeChanged = new Subject<Recipe[]>();
 
   private recipe:Recipe[]=[ 
     new Recipe(
@@ -60,16 +60,20 @@ export class RecipesService {
   addRecipe(newRecipe:Recipe){
 
     this.recipe.push(newRecipe);
+    this.recipeChanged.next(this.recipe.slice());
+
   }
 
   updateRecipe(i:number, newRecipe:Recipe){
+    // console.log(newRecipe)
     this.recipe[i]= newRecipe;
+    this.recipeChanged.next(this.recipe.slice());
   }
 
   RemoveIngredient(id:number,i:number){
-    console.log(this.recipe[id].ingredients.splice(i,1))
+    console.log(this.recipe[id].ingredients.splice(i,0))
     this.recipe[id].ingredients.splice(i,0);
-    this.recipeChanges.next(this.recipe);
+    this.recipeChanged.next(this.recipe);
   }
 
 }
