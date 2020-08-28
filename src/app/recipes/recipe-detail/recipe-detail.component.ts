@@ -30,4 +30,8 @@ export class RecipeDetailComponent implements OnInit {
   addToShoppingList(){
     this.shoppingListService.addIngredientsFrmSL(this.recipe.ingredients)
   }
+
+  onDelete(){
+    this.recipesService.deleteRecipe(this.id);
+  }
 }

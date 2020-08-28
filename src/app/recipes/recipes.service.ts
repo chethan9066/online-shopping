@@ -70,10 +70,10 @@ export class RecipesService {
     this.recipeChanged.next(this.recipe.slice());
   }
 
-  RemoveIngredient(id:number,i:number){
-    console.log(this.recipe[id].ingredients.splice(i,0))
-    this.recipe[id].ingredients.splice(i,0);
-    this.recipeChanged.next(this.recipe);
+
+  deleteRecipe(i:number){
+    this.recipe.splice(i,1);
+    this.recipeChanged.next(this.recipe.slice());
   }
 
 }
