@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
 import { Recipe } from '../recipe.module';
 import { RecipesService } from '../recipes.service'
 import { Subscription } from 'rxjs';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -15,7 +16,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   subscription:Subscription;
   loading:boolean = false;
 
-  constructor(private recipiesService: RecipesService) { }
+  constructor(private recipiesService: RecipesService , private dataStorageServie:DataStorageService) { }
 
   // recipe:Recipe[]=[new Recipe('Recipe name','descrption of recipe','https://www.telegraph.co.uk/content/dam/food-and-drink/2019/01/11/TELEMMGLPICT000185036503_trans_NvBQzQNjv4BqodXSHHE-j78vyZ0iwRUmY_nuzprQ_mxVCWqrJBTJk3A.jpeg'),
   // new Recipe('Recipe name','descrption of recipe 2','https://assets.bonappetit.com/photos/5d7296eec4af4d0008ad1263/3:2/w_2560,c_limit/Basically-Gojuchang-Chicken-Recipe-Wide.jpg')]
@@ -30,6 +31,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
         this.loading = false;
       }
     )
+
+    this.dataStorageServie.FetchData().subscribe();
   }
 
   // collectRecipeDetails(details:Recipe){

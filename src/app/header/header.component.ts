@@ -28,6 +28,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onFetchData(){
-     this.dataStorageService.FetchData();
+     this.dataStorageService.FetchData().subscribe();
   }
 }
