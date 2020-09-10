@@ -13,6 +13,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   // @Output() selectedRecipe = new EventEmitter<Recipe>();
   recipes: Recipe[];
   subscription:Subscription;
+  loading:boolean = false;
 
   constructor(private recipiesService: RecipesService) { }
 
@@ -20,11 +21,13 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   // new Recipe('Recipe name','descrption of recipe 2','https://assets.bonappetit.com/photos/5d7296eec4af4d0008ad1263/3:2/w_2560,c_limit/Basically-Gojuchang-Chicken-Recipe-Wide.jpg')]
    
   ngOnInit(): void {
+    this.loading = true;
     this.recipes = this.recipiesService.getRecipes();
     
     this.subscription = this.recipiesService.recipeChanged.subscribe(
       (recipe:Recipe[]) => {
         this.recipes = recipe;
+        this.loading = false;
       }
     )
   }
