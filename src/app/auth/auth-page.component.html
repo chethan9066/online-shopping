@@ -4,17 +4,13 @@
             <app-loading-spinner>Loading...</app-loading-spinner>
         </div>
 
-        <div class="alert alert-danger" *ngIf="error">
+        <!-- <div class="alert alert-danger" *ngIf="error">
             <p> {{error}} </p>
-        </div>
+        </div> -->
+
+        <app-alert *ngIf="error" [message]="error" (close)="errorHandling()"> </app-alert>
 
        <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" *ngIf="!isLoading">
-        <!-- <div class="from-group" *ngIf="!isLoginMode">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" placeholder="Enter Username" name="username" ngModel email required>
-            <p></p>
-        
-        </div> -->
             <div class="from-group">
                 <label for="email">E-Mail</label>
                 <input type="text" class="form-control" placeholder="Enter Your E-mail ID" name="email" ngModel required>

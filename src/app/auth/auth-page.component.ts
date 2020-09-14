@@ -60,4 +60,8 @@ export class AuthPageComponent implements OnInit {
     );
     
   }
+
+  errorHandling(){
+    this.error = null;
+  }
 }
