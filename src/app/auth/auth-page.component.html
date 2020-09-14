@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-xs-5 col-md-3 col-xs-offset-3">
+        <div *ngIf="isLoading" style="text-align: center;">
+            <app-loading-spinner>Loading...</app-loading-spinner>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="error">
+            <p> {{error}} </p>
+        </div>
+
+       <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" *ngIf="!isLoading">
+        <!-- <div class="from-group" *ngIf="!isLoginMode">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" placeholder="Enter Username" name="username" ngModel email required>
+            <p></p>
+        
+        </div> -->
+            <div class="from-group">
+                <label for="email">E-Mail</label>
+                <input type="text" class="form-control" placeholder="Enter Your E-mail ID" name="email" ngModel required>
+            </div>
+            <p></p>
+            <div class="from-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Type Your Password" name="password" ngModel required minlength="6">
+            </div>
+<p></p>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" [disabled]="!authForm.valid"> {{ isLoginMode ? 'Login' : 'Sign Up' }} </button> |
+                <button type="button" class="btn btn-primary" (click)="onSwitch()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
+
+            </div>
+       </form>
+    </div>
+</div>

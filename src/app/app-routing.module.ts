@@ -8,6 +8,7 @@ import { RecipesStartPageComponent } from './recipes/recipes-start-page/recipes-
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeResolverService } from './recipes/recipe-resolver.service'
+import { AuthPageComponent } from './auth/auth-page.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/recipe' , pathMatch:'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
 
   ]},
   { path:'shopping-list', component:ShoppingListComponent },
+  { path: 'auth' , component:AuthPageComponent },
   { path:'not-found', component:ErrorPageComponent , data:{msg:'Page Not Found!'}},
   { path:'**' , redirectTo:'/not-found'}
 

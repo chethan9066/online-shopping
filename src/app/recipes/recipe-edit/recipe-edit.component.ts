@@ -72,7 +72,7 @@ export class RecipeEditComponent implements OnInit , OnDestroy{
   }
 
   onSubmit(){
-    console.log(this.recipeForm);
+    // console.log(this.recipeForm);
     if(this.editMode){
       this.recipesService.updateRecipe(this.id,this.recipeForm.value);
     }else {
