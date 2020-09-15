@@ -32,7 +32,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
       }
     )
 
-    // this.dataStorageServie.FetchData().subscribe();
+    this.dataStorageServie.FetchData().subscribe();
   }
 
   // collectRecipeDetails(details:Recipe){

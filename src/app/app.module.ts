@@ -6,46 +6,28 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { DropDownDirective } from './shared/dropdown.directive';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { RecipesStartPageComponent } from './recipes/recipes-start-page/recipes-start-page.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { AuthPageComponent } from './auth/auth-page.component'
-import { LoadingSpinner } from './shared/loading-spinner/loading-spinner.component'
-import { AuthInterceptorService } from './auth/auth-interceptor.service'
-import { AlertComponent } from './shared/alert/alert.component'
+import { AuthPageComponent } from './auth/auth-page.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { SharedModule } from  './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent,
     HeaderComponent,
-    ShoppingListEditComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    DropDownDirective,
     ErrorPageComponent,
-    RecipesStartPageComponent ,
-    RecipeEditComponent,
     AuthPageComponent,
-    LoadingSpinner,
-    AlertComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
+    
   ],
   providers: [ { 
     provide:HTTP_INTERCEPTORS,
