@@ -8,4 +8,5 @@ Run `npm install` to install all dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Live Demo On <a href="https://stackblitz.com/github/chethan1996/online-shopping"> StacBlitz</a>
+StacBlitz <a href="https://stackblitz.com/github/chethan1996/online-shopping"> Link</a>  <br>
+<a href="https://shopping-project-cfaea.web.app"> Click here </a> For Live Demo
