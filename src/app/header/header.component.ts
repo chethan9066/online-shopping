@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit , OnDestroy{
   // @Output() featureSelected = new EventEmitter<string>();
   isAuthenticated:boolean = false;
   userSub:Subscription;
+  isCollapsed: boolean = true;
 
   constructor(private dataStorageService:DataStorageService, private authService:AuthenticationService ) { }
 
@@ -51,4 +52,6 @@ export class HeaderComponent implements OnInit , OnDestroy{
   ngOnDestroy(){
     this.userSub.unsubscribe();
   }
+
+  
 }
