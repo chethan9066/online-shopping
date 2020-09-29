@@ -23,7 +23,7 @@ import { ShoppingListReducer } from './shopping-list/store/shoppingList.reducer'
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
